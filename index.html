@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AR/VR Application</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Second View - Language Selection -->
+    <div id="language-selection" class="screen active">
+      <img src="central-image.png" class="central-image" alt="Central" />
+      <div class="language-toggle">
+        <img src="fr-flag.png" alt="French" class="flag" />
+        <label class="switch">
+          <input type="checkbox" id="language-toggle" />
+          <span class="slider round"></span>
+        </label>
+        <img src="uk-flag.png" alt="English" class="flag" />
+      </div>
+      <button id="confirm-language" class="confirm-btn">Confirm</button>
+    </div>
+
+    <!-- Third View - Steps and Text -->
+    <div id="step-view" class="screen">
+      <img src="image1.png" alt="Image 1" class="image" />
+      <div id="scrollable-text1" class="scrollable-text">
+        <p>
+          Your text here...
+        </p>
+      </div>
+      <div id="scrollable-text2" class="scrollable-text hidden">
+        <p>Different text here...</p>
+      </div>
+      <img src="image2.png" alt="Image 2" class="image" />
+      <div class="step-buttons">
+        <button id="step1-btn" class="step-btn selected">1</button>
+        <button id="step2-btn" class="step-btn">2</button>
+      </div>
+      <button id="skip-btn" class="navigation-btn">Skip</button>
+      <button id="next-btn" class="navigation-btn hidden">Next</button>
+    </div>
+
+    <!-- Fourth View - Main View -->
+    <div id="main-view" class="screen hidden">
+      <div class="top-buttons blurred-bg">
+        <button class="top-btn" id="top-btn1">Button 1</button>
+        <button class="top-btn" id="top-btn2">Button 2</button>
+        <button class="top-btn" id="top-btn3">Button 3</button>
+      </div>
+      <div class="bottom-nav">
+        <button class="nav-btn" id="list-toggle">List</button>
+        <button class="nav-btn" id="main-action">Main Action</button>
+        <button class="nav-btn" id="info-toggle">Info</button>
+      </div>
+      <div id="list-container" class="hidden">
+        <button class="list-item">Item 1</button>
+        <button class="list-item">Item 2</button>
+        <!-- Add more list items as needed -->
+      </div>
+      <div id="info-container" class="hidden">
+        <div class="info-text">Info text goes here...</div>
+        <div class="info-set" id="info-set1">
+          <button class="info-btn" data-info="Info 1.1 for Button 1">
+            Info 1.1
+          </button>
+          <button class="info-btn" data-info="Info 1.2 for Button 1">
+            Info 1.2
+          </button>
+          <!-- More info buttons for Button 1 -->
+        </div>
+        <div class="info-set hidden" id="info-set2">
+          <button class="info-btn" data-info="Info 2.1 for Button 2">
+            Info 2.1
+          </button>
+          <button class="info-btn" data-info="Info 2.2 for Button 2">
+            Info 2.2
+          </button>
+          <!-- More info buttons for Button 2 -->
+        </div>
+        <!-- Repeat for other top buttons -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

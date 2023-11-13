@@ -1,0 +1,220 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* General styles for each screen */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh;
+}
+
+.active {
+  display: flex;
+}
+
+/* Styles for the language toggle in the second view */
+.language-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.flag {
+  width: 50px; /* Adjust as needed */
+  height: auto;
+  margin: 0 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Navigation buttons */
+.navigation-btn {
+  padding: 10px 20px;
+  margin: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+.navigation-btn.hidden {
+  display: none;
+}
+
+/* Top buttons with blurred background */
+.top-buttons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.5); /* Simulate blur */
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.top-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Bottom navigation bar */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background: #333;
+  padding: 10px 0;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* List and Info containers */
+#list-container,
+#info-container {
+  display: none;
+  position: fixed;
+  bottom: 60px; /* Height of the bottom-nav */
+  left: 0;
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Separate styles for list items */
+.list-item {
+  padding: 10px 20px;
+  border: none;
+  background: #eee;
+  margin: 5px auto; /* Centering the item */
+  border-radius: 5px;
+  cursor: pointer;
+  display: block; /* Make the button a block element */
+  width: 90%; /* Set a specific width */
+  text-align: center; /* Center text */
+}
+
+/* Styles for info buttons */
+.info-btn {
+  padding: 10px 20px;
+  border: none;
+  background: #ddd; /* Slightly different color for differentiation */
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block; /* Keep the default inline-block for horizontal layout */
+}
+
+/* Scrollable horizontal list */
+.horizontal-list {
+  display: flex;
+  overflow-x: auto;
+}
+
+/* Responsive media query */
+@media (max-width: 768px) {
+  .top-buttons,
+  .bottom-nav {
+    flex-direction: column;
+  }
+
+  .top-btn,
+  .nav-btn {
+    width: 90%;
+    margin: 5px auto;
+  }
+}
+
+.list-item.active {
+  background-color: #007bff;
+  color: white; /* Optional: change text color for better visibility */
+}
+
+.info-btn.active {
+  background-color: #007bff;
+  color: white; /* Optional: change text color for better visibility */
+}
